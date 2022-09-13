@@ -176,3 +176,7 @@ Verify that the load balancer is working by using the same DNS name to access bo
 
 ![load balancer A](images/lbA.png)
 ![load balancer B](images/lbB.png)
+
+Delete the load balancer.
+
+![delete](images/delete.png)
