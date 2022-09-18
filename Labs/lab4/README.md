@@ -38,7 +38,7 @@ with open('policy.json', 'r') as policy:
     print(client.get_bucket_policy(Bucket=ROOT_S3_DIR)['Policy'])
 ```
 
-Running `apply_policy.py` to apply the policy in the `policy.json` file to the bucket.
+Run `apply_policy.py` to apply the policy in the `policy.json` file to the bucket.
 
 ![command](images/policy_command.png)
 
@@ -164,7 +164,7 @@ with open('key_policy.json', 'r') as policy:
     print(f"{data_key_encrypted = }\n{data_key = }")
 ```
 
-Running `kms.py`.
+Run `kms.py`.
 
 ![create kms key part 1](images/create_key1.png)
 ![create kms key part 2](images/create_key2.png)
@@ -342,9 +342,9 @@ for content in client.list_objects(Bucket=ROOT_S3_DIR)['Contents']:
         os.chdir('..')
 ```
 
-Running `cloudstorage.py` uploads the file that has been encrypted locally to `S3`.
+Run `cloudstorage.py` to upload the file that has been encrypted locally to `S3`.
 
-Running `restorefromcloud.py` downloads the encrypted file and decrypt it locally to view the original content.
+Run `restorefromcloud.py` to download the encrypted file and decrypt it locally to view the original content.
 
 With the `-k` flag it uses the data key generated from the `KMS customer managed key` created earlier for encryption and also adds Server-side encryption.
 
@@ -356,7 +356,7 @@ Server-side encryption is set to `SSE-KMS`.
 
 ## AES Encryption using local python library pycryptodome
 
-Running `cloudstorage.py` and `restorefromcloud.py` with the `-c` flag to use a custom hash as the symmetric key for encryption and decryption.
+Run `cloudstorage.py` and `restorefromcloud.py` with the `-c` flag to use a custom hash as the symmetric key for encryption and decryption.
 
 ![encrypt decrypt using pycryptodome](images/pycryptodome.png)
 

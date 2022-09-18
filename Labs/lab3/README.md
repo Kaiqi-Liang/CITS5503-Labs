@@ -55,7 +55,7 @@ for dir_name, subdir_list, file_list in os.walk('rootdir', topdown=True):
 print("done")
 ```
 
-Running `cloudstorage.py`.
+Run `cloudstorage.py`.
 
 ![args](images/args.png)
 
@@ -90,7 +90,7 @@ for content in client.list_objects(Bucket=ROOT_S3_DIR)['Contents']:
         os.chdir('..')
 ```
 
-Running `restorefromcloud.py`.
+Run `restorefromcloud.py`.
 
 ![restore](images/restore.png)
 
@@ -199,7 +199,7 @@ if __name__ == '__main__':
         )
 ```
 
-Running `lab3.py`.
+Run `lab3.py`.
 
 ![run](images/run.png)
 

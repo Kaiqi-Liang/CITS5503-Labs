@@ -57,6 +57,6 @@ df = pandas.DataFrame(response['Regions'])
 print(df.drop('OptInStatus', axis=1).to_string(index=False))
 ```
 
-Running `lab1.py`.
+Run `lab1.py`.
 
 ![tabulated response](images/tabulated.png)

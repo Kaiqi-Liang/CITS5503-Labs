@@ -107,7 +107,7 @@ response = client.describe_instances(InstanceIds=[instance.id])
 print(response['Reservations'][0]['Instances'][0]['PublicIpAddress'])
 ```
 
-Running `lab2.py`.
+Run `lab2.py`.
 
 ![part1](images/part1.png)
 ![part2](images/part2.png)

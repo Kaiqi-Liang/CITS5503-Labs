@@ -135,7 +135,7 @@ elb.create_listener(
 )
 ```
 
-Running `lab5.py`.
+Run `lab5.py`.
 
 ![run](images/run.png)
 
