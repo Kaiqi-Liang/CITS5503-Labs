@@ -25,7 +25,7 @@ Enable ssh to the VM by installing `openssh-server` and start the ssh service.
 
 ![openssh](images/openssh.png)
 
-Ssh into the VM from a terminal.
+SSH into the VM from a terminal.
 
 ![command prompt](images/cmd.png)
 
@@ -33,7 +33,7 @@ Stop the ssh service.
 
 ![stop](images/stop.png)
 
-Ssh will not connect after it is stopped.
+SSH will not connect after it is stopped.
 
 ![connection aborted](images/abort.png)
 
