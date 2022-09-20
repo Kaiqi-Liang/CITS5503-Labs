@@ -61,6 +61,10 @@ Go to the browser again and change the instance public IP address in the URL to 
 
 ![dns name](images/lb.png)
 
+Health check is fetching the `/polls/` page every 30 seconds.
+
+![server](images/server.png)
+
 ## Web interface for CloudStorage application
 
 Set up aws cli in the instance.
