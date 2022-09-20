@@ -102,3 +102,7 @@ Render the template in `views.py`.
 Refresh the load balancer page on the browser.
 
 ![table](images/table.png)
+
+Delete the load balancer.
+
+![delete](../lab5/images/delete.png)
