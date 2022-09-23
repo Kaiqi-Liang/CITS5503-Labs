@@ -201,7 +201,7 @@ if __name__ == '__main__':
 
 Run `lab3.py`.
 
-![run](images/run.png)
+![lab3](images/lab3.png)
 
 At first there is no table named `CloudFiles` on DynamoDB, after running `lab3.py` it then exists.
 

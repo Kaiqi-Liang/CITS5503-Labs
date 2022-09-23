@@ -137,7 +137,7 @@ elb.create_listener(
 
 Run `lab5.py`.
 
-![run](images/run.png)
+![lab5](images/lab5.png)
 
 Check the instances on AWS console.
 
