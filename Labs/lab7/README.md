@@ -39,7 +39,7 @@ Run `lab7.py`.
 
 ![lab7](images/lab7.png)
 
-## Update the python script to install your Django app
+## Update the python script to install Django app
 
 ```python
 '''
