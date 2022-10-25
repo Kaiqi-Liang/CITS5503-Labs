@@ -167,3 +167,47 @@ AWS IAM deals with 1, 2 and 5.
 1. Effect: Use `Allow` or `Deny` to indicate whether the policy allows or denies access.
 2. Action: Include a list of actions that the policy allows or denies.
 3. Condition: Specify the circumstances under which the policy grants permission.
+
+## Week 6
+
+[10 Points] Discuss the reasons why you would use Application Load Balancing and how this would be set up to load balance a Python Django application. Specifically, describe the configuration of the Listener and Target Group running the Python Django application.
+
+Benefits:
+
+1. Increase availability and fault tolerance.
+2. Allow horizontal scaling.
+3. Can seamlessly add and remove compute resources, take instances offline and update them, then bring them back online without without interrupting service.
+4. Offload SSL and the work of encryption and decryption to the load balancer so that your compute resources can focus on their main work.
+5. Add a layer of security by protecting the machines from public exposure.
+6. Can handle different communication protocols.
+7. Can configure health checks, which monitor the health of the compute resources, so that the load balancer sends requests only to the healthy ones.
+
+Create multiple Python Django applications and run them on several EC2 instances. Then put them behind an Application Load Banlancer across different availability zones by adding all the instances to a Target Group and configure the Listener to allow HTTP requests.
+
+[10 Points] Describe 2 ways in which security is implemented in AWS networks at the network level. What are the similarities and differences between these 2 security implementations?
+
+1. Network ACL and Security Group.
+2. The differences are
+
+|Security group|Network ACL|
+|--------------|-----------|
+|Operates at the instance level|Operates at the subnet level|
+|Applies to an instance only if it is associated with the instance|Applies to all instances deployed in the associated subnet (providing an additional layer of defense if security group rules are too permissive)|
+|Supports allow rules only|Supports allow rules and deny rules|
+|We evaluate all rules before deciding whether to allow traffic|We evaluate rules in order, starting with the lowest numbered rule, when deciding whether to allow traffic
+|Stateful: Return traffic is allowed, regardless of the rules|Stateless: Return traffic must be explicitly allowed by rules|
+
+3. One similarity is they both control incoming and outgoing traffic.
+
+## Week 7
+
+[10 points] When an EC2 instance is created in AWS, it is assigned to a region and a Virtual Private Cloud (VPC). Describe how network addresses are allocated to a VPC and sub-networked when an EC2 instance is created. How is the EC2 connected to other machines and to the Internet?
+
+1. When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block
+2. When you create a subnet, you specify the IPv4 CIDR block for the subnet, which is a subset of the VPC CIDR block
+3. When you launch an instance, it receives a primary private IP address from the IPv4 address of the subnet, and it is assigned to the primary network interface.
+
+## Week 9
+
+[10 points] What is DevOps and describe how you would implement the automation of creation of machines, configuration of software and deployment of application programs using AWS.
+
