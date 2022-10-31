@@ -18,7 +18,7 @@
 
 1. Security might not be guaranteed on the cloud. An established financial company might want to keep their sensitive data on premisis so they have full control over it.
 2. Data sovereignty.
-3. Able to choose the location of the data centre suited for the customers, even though cloud providers have regions all around the world but not every major city gets one.
+3. Not able to choose the location of the data centre suited for the customers, even though cloud providers have regions all over the world but not every major city gets one.
 4. It is cheaper because an established financial company will need a lot of backups and longterm persistent storage which might not fit cloud's pay as you go model.
 5. There might be performance unpredictability for example when VMs share the same disk there might be I/O interference or HPC tasks that require coordinated scheduling.
 
