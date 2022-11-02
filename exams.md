@@ -63,7 +63,7 @@ Describe your approach using AWS technologies to create that application.
 1. Use Rekognition to automatically create labels for the uploaded images.
 2. Use Cognito to create authentication, authorisation, and user management.
 3. Use S3 for users to upload images from a local machine to the cloud and enable versioning in the case of user deleting files and wanting to restore them.
-4. Use DynamoDb to store user information and metadata for their files.
+4. Use DynamoDB to store user information and metadata for their files.
 5. Use Amplify (Mobile Hub) to develop and deploy the mobile and web app needed for the users to use it across multiple devices.
 
 ### Question 4 (20 points)
@@ -162,13 +162,59 @@ Note: you can have individual statements for each department.
 
 You have been asked to set up the ability to automatically build and test code updated in a repository. Discuss which AWS service you would use to do this, and the steps involved in getting it to work. What information would be needed in the configuration file for this service?
 
+    CodeBuild can be used to build source code, run unit tests and produce artifacts that are ready to deploy.
+
 ### Question 7. Machine Learning (10 points)
 
 A dog recognition program recognises 10 dogs in a picture of 14 dogs and some cats. Of the 10 dogs, 7 are true positives and 3 are false positives.
 
 i. How many actual dogs did the recognition program recognise?
->7
+
+    7
 ii. What is the precision of the program?
->0.7
+
+    7 / 10 = 0.7
 iii. What is the recall of the program?
->0.63
+
+    7 / 14 = 0.5
+
+## Sample
+
+### 1
+
+Your best friend pitched to you an idea of an app where the user can take a picture with their mobile phone and the app will reply with a voice describing what is inside the picture. He calls it "¡See". He also mentions that the main target for this app are people that are visually impaired (someone with the partial or full loss of sight in one or both eyes). He is sure that this app will help millions of people around the world. Your friend ask you for advice on how to create this app. You as a software developer and expert in Cloud Computing want to provide some advice to your friend. Explain what technologies you would use to create this app using AWS.
+
+1. Amplify (Mobile Hub)
+2. S3
+3. Rekognition
+4. Polly
+5. Lambda
+
+After one year of launching iSee, your friend came back to you for advice. He mentioned that the app has been downloaded more than 100,000 times in the Play Store (Android users) and more than 90,000 times in the App store (iOS users). Given the success of the app, he mentioned that now he wants to add the feature of describing videos as well. Also, he wants all the actions of the app to be controlled by voice. Provide 3 examples of AWS services that your friend could use to implement the new feature and explain how it would solve the problem.
+
+1. SageMaker
+2. Lex
+3. EC2
+
+The App of your friend "iSee" has been one of the most popular apps in the last year. Your friend even gave a Ted Talk related to technology, innovation an social good. After the immense success of the app, and raising 5M dollars from investors your friend now has a start-up company with more than 30 people. He ask you to please consider a position in the company as a CTO. In the first month in your new role, you noticed that there are many different things that could be improved in the app. For example, you realized that for the image description feature, iSee uses an EC2 instance for the processing. For the video feature, iSee uses another big EC2 instance. You think there is a better way of processing images that would cost less money. The same goes for the video processing feature. You also believe that one single instance is not enough to handle the future users once the version 2.0 is released. At the end of the month, you have to give a report providing suggestions to improve the app. What are the solutions that you gave in that report?
+
+1. Use Rekognition instead of a EC2 for video processing to save money.
+2. Add auto scaling groups for the EC2 instances so that when a single instance is not enough to handle the future users it will automatically scale it.
+3. Finally add a Load Balancer for the EC2 instances.
+
+After successfully implementing your suggestions to the app "¡See. You got a report that there is a small group of users, that have uploaded images or videos that are considered "inappropriate content", which is prohibited according to your policies. You are very surprised to learn that those users have been infringing the policies of "iSee" many times in the past but just now someone from the Quality Assurance group noticed this problem. You decide that is time to implement a feature that automatically checks the images or videos that will be uploaded to the app to check for what could be considered "inappropriate content". Provide 5 advices (as bullet points) on how to achieve this using AWS.
+
+1. Use the `DetectModerationLabels` operation in Rekognition to determine if an image contains inappropriate content.
+2. Train a NLP model in SageMaker that given the moderation labels returned by Rekognition, it filters the inappropriate content even further based on our policies as `DetectModerationLabels` might be too strict or infringe with our policies.
+3. Create a Lambda function that will be triggered by S3 everytime an image is uploaded by a user. This function will first call the Rekognition API to get the labels then pass them to the trained model to determine whether it is inappropriate.
+4. Use Cognito to mangage user pools where users are required to upload a proof of age upon registration to use the app so that their age information is recorded. After the the Lambda function makes the prediction using the model, if the uploaded image does contain inappropriate content it can find out whether the user is underage and only then it will give a warning.
+5. If a user gets too many warnings within a certain time period we should backlist them and keep a list of blacklisted users in a file on S3.
+
+Taking into account all previous information that you got from the last 4 questions. Design an architecture for "iSee". What technologies you would use? What kind of architecture?
+
+1. DynamoDB to store user information, S3 to store files.
+2. Due to the popularity of the app use EC2 with auto scaling groups and Load Balancers for video processing because Lambda would be too expensive with high workload.
+3. Lambda can be used to invoke the inappropriate content detection and blacklist users if needed.
+4. The UI is developed through Amplify.
+5. Cognito is used for authentication, authorisation, and user management.
+6. Machine Learning services to be invoked including Lex, Polly, Rekognition and SageMaker.
