@@ -139,15 +139,13 @@ Features:
 
 ## Week 5
 
-[10 points] An organisation has 5 departments and has separated out each of the IAM users into separate groups using paths following the pattern companybucket/department1/*, companybucket /department2/*, companybucket /department3/* etc.
+[10 points] An organisation has 5 departments and has separated out each of the IAM users into separate groups using paths following the pattern `companybucket/department1/*`, `companybucket/department2/*`, `companybucket/department3/*` etc.
 
-Their IAM account names follow the pattern user@department1.company.com, user@department2.company.com etc.
+Their IAM account names follow the pattern `user@department1.company.com`, `user@department2.company.com` etc.
 
-You are tasked with securing a bucket that contains a folder for each of 5 departments in an organisation. Only people within a department can write to their own folder. Everyone can read from all folders.  
+You are tasked with securing a bucket that contains a folder for each of 5 departments in an organisation. Only people within a department can write to their own folder. Everyone can read from all folders.
 
-Discuss the principles that you would use to create a policy that would achieve this objective.
-
-Write the policy as a JSON file that you would use.
+Discuss the principles that you would use to create a policy that would achieve this objective. Write the policy as a JSON file that you would use.
 
 Note: you can have individual statements for each department.
 

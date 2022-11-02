@@ -13,6 +13,7 @@ You initially think on using EC2 instances for processing. Briefly explain what 
 1. Use Load Balancer to balance the load of the EC2 instances.
 2. Use S3 to store the different formats of the videos.
 3. Use Amplify (Mobile Hub) to develop and deploy the web app.
+4. Use Elastic Transcoder to convert videos to different formats.
 
 Use a client server architecture where the Load Balancer and the EC2 instances behind it acting as the server, and the application is the client.
 
@@ -141,22 +142,14 @@ Describe what S3 is and describe its “eventual consistency” mechanism. What 
 
 ### Question 4. Identity and Access Management (20 points)
 
-#### a. [10 points]
-
 A medium sized company has users that belong in different departments and perform different functions. The company has implemented a policy of document access that is specific to the job that a person does and their level in the organisation.
 
 Describe how you could use AWS IAM to provide authorization and authentication in this organisation to access to documents, as well as access and perform actions using applications.
 
-#### b. [10 points]
-
-An organisation has 5 departments and has separated out each of the IAM users into separate groups using paths following the pattern `companybucket/department1/*`, `companybucket/department2/*`, `companybucket/department3/*` etc.
-
-Their IAM account names follow the pattern `user@department1.company.com`, `user@department2.company.com` etc.
-
-You are tasked with securing a bucket that contains a folder for each of 5 departments in an organisation. Only people within a department can write to their own folder. Everyone can read from all folders.
-
-Discuss the principles that you would use to create a policy that would achieve this objective. Write the policy as a JSON file that you would use.
-Note: you can have individual statements for each department.
+    1. Create an IAM group for each department.
+    2. Create a policy for each group and assign it to the group.
+    3. Create IAM users for each person in each department and add them to their respective group, each user can have their own credentials for authenticating to AWS.
+    4. Create IAM roles for users who need document access for specific jobs that is different from the rest of the users in the same department, as they are temporary the roles can be removed when the user no longer needs those access.
 
 ### Question 6. DevOps (10 points)
 
