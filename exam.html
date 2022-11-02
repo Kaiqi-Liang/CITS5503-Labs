@@ -133,6 +133,30 @@
       <li>Inventory: Provide a regular snapshot of contents of bucket</li>
     </ul>
     <br>
+    <h1>S3 vs DynamoDB</h1>
+    <table>
+      <tr>
+        <th>S3</th>
+        <th>DynamoDB</th>
+      </tr>
+      <tr>
+        <td>Object storage service</td>
+        <td>Document NoSQL database</td>
+      </tr>
+      <tr>
+        <td>Good for storing large binary unstructured data</td>
+        <td>Designed for storing structured textual/JSON data</td>
+      </tr>
+      <tr>
+        <td>Operations work on the entire items</td>
+        <td>Can operate on the property inside an item</td>
+      </tr>
+      <tr>
+        <td>Support versioning</td>
+        <td>No out of the box object versioning</td>
+      </tr>
+    </table>
+    <br>
     <h1>OSI Security Architecture X.800 standard</h1>
     <ul>
       <li>Authentication: Assurance that communicating entity is the one claimed</li>
@@ -229,7 +253,7 @@
       <li>CodeBuild: compile source code, run unit tests and produce artifacts that are ready to deploy</li>
       <li>CodeDeploy: automate application deployments to AWS services</li>
       <li>CodePipeline: model, visualise and automate the steps required to release the software</li>
-      <li>CloudFormation: model and setup AWS resources</li>
+      <li>CloudFormation: create, configure and provision AWS resources predictably and repeatedly</li>
       <li>OpsWorks: configure and operate applications in a cloud enterprise</li>
     </ul>
     <br>

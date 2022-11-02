@@ -136,6 +136,15 @@ You have been asked to provide a brief summary of the advantages and disadvantag
 
 Describe what S3 is and discuss its similarities and differences with the data store DynamoDB.
 
+    S3 is Simple Storage Service that offers high scalability, availability, security and performance.
+
+|S3|DynamoDB|
+|-|-|
+|Object storage service|Document NoSQL database|
+|Good for storing large binary unstructured data|Designed for storing structured textual/JSON data|
+|Operations work on the entire items|Can operate on the property inside an item|
+|Support versioning|No out of the box object versioning|
+
 #### b. [5 points]
 
 Describe what S3 is and describe its “eventual consistency” mechanism. What are the potential considerations if you are writing a multi-user application that uses S3? What other technology could you use if you want to avoid the problems of eventual consistency?
