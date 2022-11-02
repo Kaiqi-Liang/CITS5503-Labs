@@ -27,7 +27,7 @@ Move the processing code from EC2 to Lambda and add an API Gateway to implement 
 
     1. Lambda provides simplicity and less complexity over EC2.
     2. No need to manage server infrastructure so that developers can focus on the business problem they are trying to solve.
-    3. It's more economic as paymen is as per the throughput, Lambda charges on the number of function calls as opposed to EC2 charges on the hours even when the machines are idle.
+    3. More economic as payment is as per the throughput, Lambda charges on the number of function calls as opposed to EC2 charges on the hours even when the machines are idle.
     4. Less coupling as different components are well separated and communicate through an API.
 
     Disadvantages:

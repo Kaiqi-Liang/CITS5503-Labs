@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @page {
+      size: auto;
+      margin: 0mm;
+    }
+    h1 {
+      font-size: small;
+    }
+	  * {
+	  	margin: 0;
+	  	font-size: x-small;
+	  }
+    body {
+      margin: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+    ul {
+      padding-inline-start: 20px;
+    }
+    section {
+      width: 30vw;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <h1>Categories of services (XaaS) cloud provides</h1>
+    <ul>
+      <li>SaaS: entire application (MicroSoft Teams)</li>
+      <li>PaaS: middleware/infrastructure (Google App Engine)</li>
+      <li>SaaS: raw computing resources (EC2)</li>
+    </ul>
+    <br>
+    <h1>Cloud vs On-premisis</h1>
+    <h2>Advantages</h2>
+    <ul>
+      <li>Increase speed and agility, the time it takes to experiment and develop is significantly lower as the cloud provides a broad range of technologies</li>
+      <li>Easy to scale up or down</li>
+      <li>More economic and save costs</li>
+      <li>No need to manage the physical infrastructure on-premises and maintain data centres</li>
+      <li>Available globally as it is very easy to deploy the product in multiple regions around the world, so it can operate at global scale</li>
+    </ul>
+    <h2>Disadvantages</h2>
+    <ul>
+      <li>Not able to choose the location of the data centre suited for the customers, even though cloud providers have regions all over the world but not every major city gets one</li>
+      <li>Data sovereignty</li>
+      <li>Security might not be guaranteed on the cloud as compare to having full control over their own data centres on-premises</li>
+      <li>There is a bottleneck on transfering large amount of data to the Cloud when moving infrastructure from being on-premises to cloud based</li>
+      <li>There might be performance unpredictability for example when VMs share the same disk there might be I/O interference or HPC tasks that require coordinated scheduling</li>
+    </ul>
+    <br>
+    <h1>Ways to scale a web application horizontally</h1>
+    <ul>
+      <li>Replication: create multiple copies of the same data and store them into multiple machines</li>
+      <li>Partitioning: split the data into smaller and independent units and assign one or more partitions to a single machine across multiple machines</li>
+    </ul>
+    <br>
+    <h1>VirtualBox vs Docker</h1>
+    <h2>Differences</h2>
+    <table>
+      <tr>
+        <th>VirtualBox</th>
+        <th>Docker</th>
+      </tr>
+      <tr>
+        <td>Run multiple OS on one physical machine</td>
+        <td>Run on top of the host OS</td>
+      </tr>
+      <tr>
+        <td>Provide fault and security isolation at the hardware level</td>
+        <td>Provide fault and security isolation at the software level</td>
+      </tr>
+      <tr>
+        <td>Save the entire state to files</td>
+        <td>Not really designed to save state as they are temporary</td>
+      </tr>
+      <tr>
+        <td>Give each instance its own physical resources</td>
+        <td>Share the physical resources between instances</td>
+      </tr>
+    </table>
+    <h2>Similarities</h2>
+    <ul>
+      <li>Divide system resources</li>
+      <li>Preserve performance with resource controls</li>
+      <li>Hardware independent</li>
+    </ul>
+    <br>
+    <h1>Different types of virtualisation</h1>
+    <ul>
+      <li>Language: allow the execution of the same code (Java) on different architectures (JVM)</li>
+      <li>OS: run a hypervisor on top of the host OS (VirtualBox)</li>
+      <li>Hareware: run a hypervisor on top of bare metals and divide the physical resources for different guest OS and it does't have a host OS (EC2)</li>
+    </ul>
+    <br>
+    <h1>AI Services</h1>
+    <ul>
+      <li>SageMaker: build and ML models</li>
+      <li>Comprehend: use NLP to extract insights from text</li>
+      <li>Lex: conversational interfaces for apps using voice and text</li>
+      <li>Polly: text to speech</li>
+      <li>Rekognition: image and video analysis</li>
+    </ul>
+  </section>
+  <section>
+    <h1>Core components of DynamoDB</h1>
+    <ul>
+      <li>tables</li>
+      <li>items</li>
+      <li>attributes</li>
+    </ul>
+    <br>
+    <h1>S3</h1>
+    <h2>Properties</h2>
+    <ul>
+      <li>Users with special permissions of Read and Write</li>
+      <li>Grant public read access to the bucket</li>
+    </ul>
+    <h2>Features</h2>
+    <ul>
+      <li>Lifecycle: Transition objects that are infrequently accessed to cold storage</li>
+      <li>Replication: Automatically copy objects to another bucket in a different region</li>
+      <li>Analytics: Suggest how to manage objects based on access patterns</li>
+      <li>Metrics: Stats on operations on objects in the bucket</li>
+      <li>Inventory: Provide a regular snapshot of contents of bucket</li>
+    </ul>
+    <br>
+    <h1>OSI Security Architecture X.800 standard</h1>
+    <ul>
+      <li>Authentication: Assurance that communicating entity is the one claimed</li>
+      <li>Access Control: Prevention of the unauthorized use of a resource</li>
+      <li>Data Confidentiality: Protection of data from unauthorized disclosure</li>
+      <li>Data Integrity: Assurance that data received is as sent by an authorized entity/li>
+      <li>Non-Repudiation: Protection against denial by one of the parties in a communication</li>
+      <li>Availability: Resource accessible/usable</li>
+    </ul>
+    <br>
+    <h1>Benefits of Application Load Balancer</h1>
+    <ul>
+      <li>Increase availability and fault tolerance</li>
+      <li>Allow horizontal scaling</li>
+      <li>Can seamlessly add and remove compute resources, take instances offline and update them, then bring them back online without without interrupting service</li>
+      <li>Offload SSL and the work of encryption and decryption to the load balancer so that your compute resources can focus on their main work</li>
+      <li>Add a layer of security by protecting the machines from public exposure</li>
+      <li>Can handle different communication protocols</li>
+      <li>Can configure health checks, which monitor the health of the compute resources, so that the load balancer sends requests only to the healthy ones</li>
+    </ul>
+    <br>
+    <h1>Ways in which security is implemented in AWS networks</h1>
+    <ul>
+      <li>Network ACL</li>
+      <li>Security Group</li>
+    </ul>
+    <h2>Differences</h2>
+    <table>
+      <tr>
+        <th>Security group</th>
+        <th>Network ACL</th>
+      </tr>
+      <tr>
+        <td>Operates at the instance level</td>
+        <td>Operates at the subnet level</td>
+      </tr>
+      <tr>
+        <td>Applies to the instance that it is assigned to</td>
+        <td>Applies to all instances deployed in the subnet</td>
+      </tr>
+      <tr>
+        <td>Supports allow rules only</td>
+        <td>Supports allow and deny rules</td>
+      </tr>
+      <tr>
+        <td>All rules are evaluated before deciding whether to allow traffic</td>
+        <td>Rules are processed in order when deciding whether to allow or deny traffic</td>
+      </tr>
+      <tr>
+        <td>Stateful: Return traffic is allowed, regardless of the rules</td>
+        <td>Stateless: Return traffic must be explicitly allowed by rules</td>
+      </tr>
+    </table>
+    <h2>Similarities</h2>
+    <p>They both control incoming and outgoing traffic</p>
+  </section>
+  <section>
+    <h1>Web Architecture</h1>
+    <h2>Benefits of Microservices</h1>
+    <ul>
+      <li>Agility</li>
+      <li>Flexible Scaling</li>
+      <li>Easy Deployment</li>
+      <li>Technological Freedom</li>
+      <li>Reusable Code</li>
+      <li>Resilience</li>
+    </ul>
+    <h2>Authentication & Authorisation</h1>
+    <ul>
+      <li>Use IAM either directly or through API Gateway Resource Policies</li>
+      <li>Use Cognito</li>
+      <li>Use API keys</li>
+      <li>Use an external service through Lambda</li>
+    </ul>
+    <br>
+    <h1>Lambda vs EC2</h1>
+    <h2>Advantanges</h2>
+    <ul>
+      <li>Lambda provides simplicity and less complexity over EC2</li>
+      <li>No need to manage server infrastructure so that developers can focus on the business problem they are trying to solve</li>
+      <li>More economic as payment is as per the throughput, Lambda charges on the number of function calls as opposed to EC2 charges on the hours even when the machines are idle</li>
+      <li>Less coupling as different components are well separated and communicate through an API</li>
+    </ul>
+    <h2>Disadvantages</h2>
+    <ul>
+    <li>Less customisable and flexible as AWS decides the infrastructure therefore less control</li>
+    <li>Serverless Architecture executes commands and functions on temporarily created containers. So if a client performs few tasks on your app, the serverless architecture will create a temporary box and will destroy it as soon as the client is done performing tasks, this results in delays which are also known as cold start</li>
+    <li>Serverless platforms can be overloaded which opens up a lot of security concerns such as Denial of Service attacks</li>
+    </ul>
+    <br>
+    <h1>DevOps</h1>
+    <ul>
+      <li>CodeCommit: manage Git repos in the AWS cloud</li>
+      <li>CodeBuild: compile source code, run unit tests and produce artifacts that are ready to deploy</li>
+      <li>CodeDeploy: automate application deployments to AWS services</li>
+      <li>CodePipeline: model, visualise and automate the steps required to release the software</li>
+      <li>CloudFormation: model and setup AWS resources</li>
+      <li>OpsWorks: configure and operate applications in a cloud enterprise</li>
+    </ul>
+    <br>
+    <h1>CodeBuild</h1>
+    <h2>Steps</h2>
+    <ul>
+      <li>Create the source code</li>
+      <li>Create the buildspec file</li>
+      <li>Create S3 buckets to store the build input and output</li>
+      <li>Upload the source code and the buildspec file to S3</li>
+      <li>Create the build project</li>
+      <li>Run the build</li>
+      <li>View the build information in CloudWatch Logs</li>
+      <li>Get the build output from S3</li>
+    </ul>
+    <h2>Information needed in the configuration files</h1>
+    <ul>
+      <li>version of the config</li>
+      <li>phases</li>
+      <li>commands to run in each phrase</li>
+      <li>name of the files to be produced by CodeBuild (artifacts)</li>
+    </ul>
+    <br>
+    <h1>Mobile</h1>
+    <h2>Benefits</h2>
+    <ul>
+      <li>Extended battery life, run most of the heavy computing tasks on the cloud</li>
+      <li>Abundant Storage Space, store information on the cloud instead of on the device itself</li>
+      <li>Having a backup, if the mobile device breaks down or gets lost the data is saved on the cloud</li>
+    </ul>
+    <h2>Applications</h2>
+    <ul>
+      <li>Mobile robots run heavy computer vision and NLP computation on the cloud (PaaS)</li>
+      <li>Mobile phones have a lot of applications using the cloud for example Dropbox (SaaS)</li>
+    </ul>
+  </section>
+</body>
+</html>
