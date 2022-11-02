@@ -15,7 +15,7 @@ You initially think on using EC2 instances for processing. Briefly explain what 
     3. Use Amplify (Mobile Hub) to develop and deploy the web app.
     4. Use Elastic Transcoder to convert videos to different formats.
 
-    Use a client server architecture where the Load Balancer and the EC2 instances behind it acting as the server, and the application is the client.
+    Use a client/server architecture where the Load Balancer and the EC2 instances behind it acting as the server, and the application is the client.
 
 #### 1.2 (10 points)
 
@@ -156,6 +156,24 @@ Describe how you could use AWS IAM to provide authorization and authentication i
 You have been asked to set up the ability to automatically build and test code updated in a repository. Discuss which AWS service you would use to do this, and the steps involved in getting it to work. What information would be needed in the configuration file for this service?
 
     CodeBuild can be used to build source code, run unit tests and produce artifacts that are ready to deploy.
+
+    Steps:
+
+    1. Create the source code.
+    2. Create the buildspec file.
+    3. Create S3 buckets to store the build input and output.
+    4. Upload the source code and the buildspec file to S3.
+    5. Create the build project.
+    6. Run the build.
+    7. View the build information in CloudWatch Logs.
+    8. Get the build output from S3.
+
+    Information needed in the configuration files:
+
+    1. version of the config
+    2. phases
+    3. commands to run in each phrase
+    4. name of the files to be produced by CodeBuild (artifacts)
 
 ### Question 7. Machine Learning (10 points)
 

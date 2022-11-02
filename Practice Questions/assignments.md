@@ -235,8 +235,8 @@ Note: you can have individual statements for each department.
 
 Amazon ML supports three types of ML models: binary classification, multiclass classification, and regression.
 
-    1. Binary Classification: Is this email a spam.
-    2. Multiclass Classification: Is this handwritten digit a 0, 1, 2 ... or 9.
-    3. Regression: What is the income of an average Data Scientist.
+    1. Binary Classification: Is this email a spam or not?
+    2. Multiclass Classification: Is this image of a fruit an apple, a pear or n orange?
+    3. Regression: What is the temperature tomorrow?
 
 [20 points] [a] [15 points] You have been asked to create a project plan for the new machine learning model your company has asked you to build. List the main tasks and sub-tasks you would need to complete to create the model on AWS. [b] [5 points] How would you measure the accuracy of the model you created?
