@@ -207,7 +207,8 @@ After one year of launching iSee, your friend came back to you for advice. He me
 
     1. SageMaker
     2. Lex
-    3. EC2
+    3. Comprehend
+    4. EC2
 
 ### Question 3
 
@@ -236,4 +237,4 @@ Taking into account all previous information that you got from the last 4 questi
     3. Lambda can be used to invoke the inappropriate content detection and blacklist users if needed.
     4. The UI is developed through Amplify.
     5. Cognito is used for authentication, authorisation, and user management.
-    6. Machine Learning services to be invoked including Lex, Polly, Rekognition and SageMaker.
+    6. Machine Learning services to be invoked including Lex, Polly, Rekognition, Comprehend and SageMaker.
