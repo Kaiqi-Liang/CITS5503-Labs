@@ -10,12 +10,12 @@ The creative designers of a marketing and video editing company in Melbourne use
 
 You initially think on using EC2 instances for processing. Briefly explain what other AWS technologies you would use to replicate the web-based software functionalities and what architecture you would use to satisfy the needs of the client using such technologies.
 
-1. Use Load Balancer to balance the load of the EC2 instances.
-2. Use S3 to store the different formats of the videos.
-3. Use Amplify (Mobile Hub) to develop and deploy the web app.
-4. Use Elastic Transcoder to convert videos to different formats.
+    1. Use Load Balancer to balance the load of the EC2 instances.
+    2. Use S3 to store the different formats of the videos.
+    3. Use Amplify (Mobile Hub) to develop and deploy the web app.
+    4. Use Elastic Transcoder to convert videos to different formats.
 
-Use a client server architecture where the Load Balancer and the EC2 instances behind it acting as the server, and the application is the client.
+    Use a client server architecture where the Load Balancer and the EC2 instances behind it acting as the server, and the application is the client.
 
 #### 1.2 (10 points)
 
@@ -23,18 +23,18 @@ The company currently creates on average 50 videos per month and it’s not like
 
 Move the processing code from EC2 to Lambda and add an API Gateway to implement this Serverless architecture.
 
-Benefits:
+    Benefits:
 
-1. Lambda provides simplicity and less complexity over EC2.
-2. No need to manage server infrastructure so that developers can focus on the business problem they are trying to solve.
-3. It's more economic as paymen is as per the throughput, Lambda charges on the number of function calls as opposed to EC2 charges on the hours even when the machines are idle.
-4. Less coupling as different components are well separated and communicate through an API.
+    1. Lambda provides simplicity and less complexity over EC2.
+    2. No need to manage server infrastructure so that developers can focus on the business problem they are trying to solve.
+    3. It's more economic as paymen is as per the throughput, Lambda charges on the number of function calls as opposed to EC2 charges on the hours even when the machines are idle.
+    4. Less coupling as different components are well separated and communicate through an API.
 
-Disadvantages:
+    Disadvantages:
 
-1. Less customisable and flexible as AWS decides the infrastructure therefore less control.
-2. Serverless Architecture executes commands and functions on temporarily created containers. So if a client performs few tasks on your app, the serverless architecture will create a temporary box and will destroy it as soon as the client is done performing tasks, this results in delays which are also known as cold start.
-3. Serverless platforms can be overloaded which opens up a lot of security concerns such as Denial of Service attacks.
+    1. Less customisable and flexible as AWS decides the infrastructure therefore less control.
+    2. Serverless Architecture executes commands and functions on temporarily created containers. So if a client performs few tasks on your app, the serverless architecture will create a temporary box and will destroy it as soon as the client is done performing tasks, this results in delays which are also known as cold start.
+    3. Serverless platforms can be overloaded which opens up a lot of security concerns such as Denial of Service attacks.
 
 ### Question 2 (20 points)
 
@@ -44,16 +44,16 @@ A professor in Computer Science at UWA has data from all labs, mid-term exam and
 
 How would you use AWS technologies to prove (or disprove) his theory and help the professor predicting the marks for the current students this year?
 
-1. Upload the csv file of the marks for the last two years on S3.
-2. Train a Regression Model on SageMaker using the data on S3.
-3. Make predictions on this year's marks and save them back to S3.
+    1. Upload the csv file of the marks for the last two years on S3.
+    2. Train a Regression Model on SageMaker using the data on S3.
+    3. Make predictions on this year's marks and save them back to S3.
 
 #### 2.2 (10 points)
 
 What approach would you use to assess the data models and help with the data analysis of the results?
 
-1. Split the data (i.e. marks from the last 2 years) into training set and test set, use cross validation on the training set and calculate the RMSE on the test set.
-2. After doing the predictions mark the final exams and calculate the RMSE between them and the actual marks. The RMSE will be used to assess the data model.
+    1. Split the data (i.e. marks from the last 2 years) into training set and test set, use cross validation on the training set and calculate the RMSE on the test set.
+    2. After doing the predictions mark the final exams and calculate the RMSE between them and the actual marks. The RMSE will be used to assess the data model.
 
 ### Question 3 (10 points)
 
@@ -61,11 +61,11 @@ A software developer wants to create a Drobox-like application for Photographers
 
 Describe your approach using AWS technologies to create that application.
 
-1. Use Rekognition to automatically create labels for the uploaded images.
-2. Use Cognito to create authentication, authorisation, and user management.
-3. Use S3 for users to upload images from a local machine to the cloud and enable versioning in the case of user deleting files and wanting to restore them.
-4. Use DynamoDB to store user information and metadata for their files.
-5. Use Amplify (Mobile Hub) to develop and deploy the mobile and web app needed for the users to use it across multiple devices.
+    1. Use Rekognition to automatically create labels for the uploaded images.
+    2. Use Cognito to create authentication, authorisation, and user management.
+    3. Use S3 for users to upload images from a local machine to the cloud and enable versioning in the case of user deleting files and wanting to restore them.
+    4. Use DynamoDB to store user information and metadata for their files.
+    5. Use Amplify (Mobile Hub) to develop and deploy the mobile and web app needed for the users to use it across multiple devices.
 
 ### Question 4 (20 points)
 
@@ -73,16 +73,16 @@ A MedTech company in Perth has created a novel algorithm for detecting heart dis
 
 Give 10 recommendations to the company on how they could use AWS to create this platform. **Provide your answer as a list of bullet points**.
 
-1. Use S3 to store the scans and prediction results.
-2. Use SageMaker to run the machine learning algorithm.
-3. Use Cognito to allow authorised radiologist working at the Royal Perth Hospital to access the platform.
-4. Use EC2 to run the novel algorithm.
-5. Use Load Balancer to load balance the EC2 instances for scaling up the number of instances to handle large workload.
-6. Use CodeDeploy to automate the application deployments to EC2 instances.
-7. Package the application in a container and use ECS to manage the containers so it can be deployed easily for other hospitals to use.
-8. Use KMS to encrypt the scans as they are sensitive user data.
-9. Use Amplify (Mobile Hub) to develop the platform.
-10. Use Rekognition to help with computer vision tasks.
+    1. Use S3 to store the scans and prediction results.
+    2. Use SageMaker to run the machine learning algorithm.
+    3. Use Cognito to allow authorised radiologist working at the Royal Perth Hospital to access the platform.
+    4. Use EC2 to run the novel algorithm.
+    5. Use Load Balancer to load balance the EC2 instances for scaling up the number of instances to handle large workload.
+    6. Use CodeDeploy to automate the application deployments to EC2 instances.
+    7. Package the application in a container and use ECS to manage the containers so it can be deployed easily for other hospitals to use.
+    8. Use KMS to encrypt the scans as they are sensitive user data.
+    9. Use Amplify (Mobile Hub) to develop the platform.
+    10. Use Rekognition to help with computer vision tasks.
 
 ### Question 5 (20 points)
 
@@ -90,21 +90,21 @@ You are a consultant who has been asked to write a report for a rapidly growing 
 
 Provide 5 pros and 5 cons of moving infrastructure from being on-premises to cloud based. Consider this in the context of global expansion and resilience. **Provide your answer as a list of bullet points**.
 
-Pros:
+    Pros:
 
-1. More cost efficient.
-2. No need to manage the physical infrastructure on-premises and maintain data centres.
-3. Easy to scale up or down.
-4. Increase speed and agility, the time it takes to experiment and develop is significantly lower.
-5. Available globally as it is very easy to deploy the product in multiple regions around the world, so it can operate at global scale.
+    1. More cost efficient.
+    2. No need to manage the physical infrastructure on-premises and maintain data centres.
+    3. Easy to scale up or down.
+    4. Increase speed and agility, the time it takes to experiment and develop is significantly lower.
+    5. Available globally as it is very easy to deploy the product in multiple regions around the world, so it can operate at global scale.
 
-Cons:
+    Cons:
 
-1. Even though cloud providers have regions all around the world but not every major city gets one. PFC wants to expend into new markets especially China but AWS does not even have an availability zone anywhere in China.
-2. Data sovereignty.
-3. Security might not be guaranteed on the cloud as compare to having full control over their own data centres on-premises.
-4. There is a bottleneck on transfering large amount of data to the Cloud when moving infrastructure from being on-premises to cloud based.
-5. There might be performance unpredictability for example when VMs share the same disk there might be I/O interference or HPC tasks that require coordinated scheduling.
+    1. Even though cloud providers have regions all around the world but not every major city gets one. PFC wants to expend into new markets especially China but AWS does not even have an availability zone anywhere in China.
+    2. Data sovereignty.
+    3. Security might not be guaranteed on the cloud as compare to having full control over their own data centres on-premises.
+    4. There is a bottleneck on transfering large amount of data to the Cloud when moving infrastructure from being on-premises to cloud based.
+    5. There might be performance unpredictability for example when VMs share the same disk there might be I/O interference or HPC tasks that require coordinated scheduling.
 
 ## 2018 - 2019
 
@@ -114,21 +114,21 @@ A company is trying to decide if it should use Cloud Computing for all of its co
 
 You have been asked to provide a brief summary of the advantages and disadvantages of using Cloud Computing versus owning and running its own infrastructure and services. These should be stated from a technical, economic, security and efficiency perspectives.
 
-Advantages:
+    Advantages:
 
-1. Increase speed and agility, the time it takes to experiment and develop is significantly lower as the cloud provides a broad range of technologies.
-2. Easy to scale up or down.
-3. More economic and save costs.
-4. No need to manage the physical infrastructure on-premises and maintain data centres.
-5. Available globally as it is very easy to deploy the product in multiple regions around the world, so it can operate at global scale.
+    1. Increase speed and agility, the time it takes to experiment and develop is significantly lower as the cloud provides a broad range of technologies.
+    2. Easy to scale up or down.
+    3. More economic and save costs.
+    4. No need to manage the physical infrastructure on-premises and maintain data centres.
+    5. Available globally as it is very easy to deploy the product in multiple regions around the world, so it can operate at global scale.
 
-Disadvantages:
+    Disadvantages:
 
-1. Not able to choose the location of the data centre suited for the customers, even though cloud providers have regions all over the world but not every major city gets one.
-2. Data sovereignty.
-3. Security might not be guaranteed on the cloud as compare to having full control over their own data centres on-premises.
-4. There is a bottleneck on transfering large amount of data to the Cloud when moving infrastructure from being on-premises to cloud based.
-5. There might be performance unpredictability for example when VMs share the same disk there might be I/O interference or HPC tasks that require coordinated scheduling.
+    1. Not able to choose the location of the data centre suited for the customers, even though cloud providers have regions all over the world but not every major city gets one.
+    2. Data sovereignty.
+    3. Security might not be guaranteed on the cloud as compare to having full control over their own data centres on-premises.
+    4. There is a bottleneck on transfering large amount of data to the Cloud when moving infrastructure from being on-premises to cloud based.
+    5. There might be performance unpredictability for example when VMs share the same disk there might be I/O interference or HPC tasks that require coordinated scheduling.
 
 ### Question 3. Storage (10 points)
 
@@ -173,41 +173,49 @@ iii. What is the recall of the program?
 
 ## Sample
 
-### 1
+### Question 1
 
 Your best friend pitched to you an idea of an app where the user can take a picture with their mobile phone and the app will reply with a voice describing what is inside the picture. He calls it "¡See". He also mentions that the main target for this app are people that are visually impaired (someone with the partial or full loss of sight in one or both eyes). He is sure that this app will help millions of people around the world. Your friend ask you for advice on how to create this app. You as a software developer and expert in Cloud Computing want to provide some advice to your friend. Explain what technologies you would use to create this app using AWS.
 
-1. Amplify (Mobile Hub)
-2. S3
-3. Rekognition
-4. Polly
-5. Lambda
+    1. Amplify (Mobile Hub)
+    2. S3
+    3. Rekognition
+    4. Polly
+    5. Lambda
+
+### Question 2
 
 After one year of launching iSee, your friend came back to you for advice. He mentioned that the app has been downloaded more than 100,000 times in the Play Store (Android users) and more than 90,000 times in the App store (iOS users). Given the success of the app, he mentioned that now he wants to add the feature of describing videos as well. Also, he wants all the actions of the app to be controlled by voice. Provide 3 examples of AWS services that your friend could use to implement the new feature and explain how it would solve the problem.
 
-1. SageMaker
-2. Lex
-3. EC2
+    1. SageMaker
+    2. Lex
+    3. EC2
+
+### Question 3
 
 The App of your friend "iSee" has been one of the most popular apps in the last year. Your friend even gave a Ted Talk related to technology, innovation an social good. After the immense success of the app, and raising 5M dollars from investors your friend now has a start-up company with more than 30 people. He ask you to please consider a position in the company as a CTO. In the first month in your new role, you noticed that there are many different things that could be improved in the app. For example, you realized that for the image description feature, iSee uses an EC2 instance for the processing. For the video feature, iSee uses another big EC2 instance. You think there is a better way of processing images that would cost less money. The same goes for the video processing feature. You also believe that one single instance is not enough to handle the future users once the version 2.0 is released. At the end of the month, you have to give a report providing suggestions to improve the app. What are the solutions that you gave in that report?
 
-1. Use Rekognition instead of a EC2 for video processing to save money.
-2. Add auto scaling groups for the EC2 instances so that when a single instance is not enough to handle the future users it will automatically scale it.
-3. Finally add a Load Balancer for the EC2 instances.
+    1. Use Rekognition instead of a EC2 for video processing to save money.
+    2. Add auto scaling groups for the EC2 instances so that when a single instance is not enough to handle the future users it will automatically scale it.
+    3. Finally add a Load Balancer for the EC2 instances.
+
+### Question 4
 
 After successfully implementing your suggestions to the app "¡See. You got a report that there is a small group of users, that have uploaded images or videos that are considered "inappropriate content", which is prohibited according to your policies. You are very surprised to learn that those users have been infringing the policies of "iSee" many times in the past but just now someone from the Quality Assurance group noticed this problem. You decide that is time to implement a feature that automatically checks the images or videos that will be uploaded to the app to check for what could be considered "inappropriate content". Provide 5 advices (as bullet points) on how to achieve this using AWS.
 
-1. Use the `DetectModerationLabels` operation in Rekognition to determine if an image contains inappropriate content.
-2. Train a NLP model in SageMaker that given the moderation labels returned by Rekognition, it filters the inappropriate content even further based on our policies as `DetectModerationLabels` might be too strict or infringe with our policies.
-3. Create a Lambda function that will be triggered by S3 everytime an image is uploaded by a user. This function will first call the Rekognition API to get the labels then pass them to the trained model to determine whether it is inappropriate.
-4. Use Cognito to mangage user pools where users are required to upload a proof of age upon registration to use the app so that their age information is recorded. After the the Lambda function makes the prediction using the model, if the uploaded image does contain inappropriate content it can find out whether the user is underage and only then it will give a warning.
-5. If a user gets too many warnings within a certain time period we should backlist them and keep a list of blacklisted users in a file on S3.
+    1. Use the `DetectModerationLabels` operation in Rekognition to determine if an image contains inappropriate content.
+    2. Train a NLP model in SageMaker that given the moderation labels returned by Rekognition, it filters the inappropriate content even further based on our policies as `DetectModerationLabels` might be too strict or infringe with our policies.
+    3. Create a Lambda function that will be triggered by S3 everytime an image is uploaded by a user. This function will first call the Rekognition API to get the labels then pass them to the trained model to determine whether it is inappropriate.
+    4. Use Cognito to mangage user pools where users are required to upload a proof of age upon registration to use the app so that their age information is recorded. After the the Lambda function makes the prediction using the model, if the uploaded image does contain inappropriate content it can find out whether the user is underage and only then it will give a warning.
+    5. If a user gets too many warnings within a certain time period we should backlist them and keep a list of blacklisted users in a file on S3.
+
+### Question 5
 
 Taking into account all previous information that you got from the last 4 questions. Design an architecture for "iSee". What technologies you would use? What kind of architecture?
 
-1. DynamoDB to store user information, S3 to store files.
-2. Due to the popularity of the app use EC2 with auto scaling groups and Load Balancers for video processing because Lambda would be too expensive with high workload.
-3. Lambda can be used to invoke the inappropriate content detection and blacklist users if needed.
-4. The UI is developed through Amplify.
-5. Cognito is used for authentication, authorisation, and user management.
-6. Machine Learning services to be invoked including Lex, Polly, Rekognition and SageMaker.
+    1. DynamoDB to store user information, S3 to store files.
+    2. Due to the popularity of the app use EC2 with auto scaling groups and Load Balancers for video processing because Lambda would be too expensive with high workload.
+    3. Lambda can be used to invoke the inappropriate content detection and blacklist users if needed.
+    4. The UI is developed through Amplify.
+    5. Cognito is used for authentication, authorisation, and user management.
+    6. Machine Learning services to be invoked including Lex, Polly, Rekognition and SageMaker.
