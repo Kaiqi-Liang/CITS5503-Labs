@@ -1,4 +1,4 @@
-# Exam
+# Exams
 
 ## 2021
 
@@ -171,7 +171,7 @@ iii. What is the recall of the program?
 
     7 / 14 = 0.5
 
-## Sample
+## Sample Exam
 
 ### Question 1
 
