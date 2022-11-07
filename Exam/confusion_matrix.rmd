@@ -1,0 +1,20 @@
+---
+output:
+  html_document:
+    includes:
+      before_body: style.html
+    number_sections: true
+---
+
+```{r, echo=FALSE}
+confusion_matrix <- data.frame(
+  Predicted.Positive = c("TP", "FP"),
+  Predicted.Negative = c("FN", "TN")
+)
+rownames(confusion_matrix) <- c("Actual.Positive", "Actual.Negative")
+
+library(knitr)
+kable(confusion_matrix)
+```
+
+$Precision = \frac{TP}{TP + FP}\\Recall = \frac{TP}{TP + FN}$
