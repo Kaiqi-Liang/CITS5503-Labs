@@ -191,8 +191,8 @@ Note: you can have individual statements for each department.
 
 [10 points] When an EC2 instance is created in AWS, it is assigned to a region and a Virtual Private Cloud (VPC). Describe how network addresses are allocated to a VPC and sub-networked when an EC2 instance is created. How is the EC2 connected to other machines and to the Internet?
 
-    1. When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block
-    2. When you create a subnet, you specify the IPv4 CIDR block for the subnet, which is a subset of the VPC CIDR block
+    1. When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block.
+    2. When you create a subnet, you specify the IPv4 CIDR block for the subnet, which is a subset of the VPC CIDR block.
     3. When you launch an instance, it receives a primary private IP address from the IPv4 address of the subnet, and it is assigned to the primary network interface.
 
 ## Week 8

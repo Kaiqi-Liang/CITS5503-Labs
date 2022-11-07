@@ -11,14 +11,14 @@
       margin: 0mm;
     }
     h1 {
-      font-size: small;
+      font-size: 12pt;
     }
-	  * {
-	  	margin: 0;
-	  	font-size: x-small;
-	  }
+    * {
+      margin: 0;
+      font-size: 10pt;
+    }
     body {
-      margin: 5px;
+      margin: 25px;
       display: flex;
       justify-content: space-between;
     }
@@ -101,21 +101,58 @@
       <li>Hareware: run a hypervisor on top of bare metals and divide the physical resources for different guest OS and it does't have a host OS (EC2)</li>
     </ul>
     <br>
-    <h1>AI Services</h1>
+    <h1>Keys in a Policy</h1>
     <ul>
-      <li>SageMaker: build and ML models</li>
-      <li>Comprehend: use NLP to extract insights from text</li>
-      <li>Lex: conversational interfaces for apps using voice and text</li>
-      <li>Polly: text to speech</li>
-      <li>Rekognition: image and video analysis</li>
+      <li>Effect: Use `Allow` or `Deny` to indicate whether the policy allows or denies access</li>
+      <li>Action: Include a list of actions that the policy allows or denies</li>
+      <li>Condition: Specify the circumstances under which the policy grants permission</li>
+    </ul>
+    <br>
+    <h1>OSI Security Architecture X.800 standard</h1>
+    <ul>
+      <li>Authentication: Assurance that communicating entity is the one claimed</li>
+      <li>Access Control: Prevention of the unauthorized use of a resource</li>
+      <li>Data Confidentiality: Protection of data from unauthorized disclosure</li>
+      <li>Data Integrity: Assurance that data received is as sent by an authorized entity/li>
+      <li>Non-Repudiation: Protection against denial by one of the parties in a communication</li>
+      <li>Availability: Resource accessible/usable</li>
+    </ul>
+    <br>
+    <h1>NAT</h1>
+    <h2>Benefits</h2>
+    <ul>
+      <li>Use of a single public or gateway IP address among many devices in a network</li>
+      <li>Use of a dynamic IP address for home user for sharing</li>
+    </ul>
+    <br>
+    <h1>CIDR</h1>
+    <p>Allow subnet IP addresses for: performance, administration</p>
+    <br>
+    <h1>VPC Subnet</h1>
+    <h2>Attributes</h2>
+    <ul>
+      <li>Name</li>
+      <li>VPC associated</li>
+      <li>Availability Zone</li>
+      <li>IPv4 CIDR block</li>
+      <li>IPv6 CIDR block (optional)</li>
     </ul>
   </section>
   <section>
-    <h1>Core components of DynamoDB</h1>
+    <h1>Steps to take and the decisions to make for creating, configuring and running an EC2 instance</h1>
     <ul>
-      <li>tables</li>
-      <li>items</li>
-      <li>attributes</li>
+      <li>Pick an OS image, what operating system do you want to run</li>
+      <li>Pick an instance type, how many resources do you need for this virtual machine instance</li>
+      <li>Create a key pair, no decision needed</li>
+      <li>Create security group with inbound rules, who do you want to allow to access the virtual machine</li>
+      <li>Configure the size of the EBS volume, how much storage do you need</li>
+    </ul>
+    <br>
+    <h1>EBS and its features</h1>
+    <p>Elastic Block Storage: a high performance block level storage volumns for use with EC2 instances, They behave like raw, unformatted block devices</p>
+    <ul>
+      <li>It can be attached to an instance so that it can be replicated across multiple servers to avoid losing data when a server fails</li>
+      <li>A snapshot of the EBS volumes can be created at any time as a backup and its size can be increase automatically</li>
     </ul>
     <br>
     <h1>S3</h1>
@@ -157,14 +194,11 @@
       </tr>
     </table>
     <br>
-    <h1>OSI Security Architecture X.800 standard</h1>
+    <h1>Core components of DynamoDB</h1>
     <ul>
-      <li>Authentication: Assurance that communicating entity is the one claimed</li>
-      <li>Access Control: Prevention of the unauthorized use of a resource</li>
-      <li>Data Confidentiality: Protection of data from unauthorized disclosure</li>
-      <li>Data Integrity: Assurance that data received is as sent by an authorized entity/li>
-      <li>Non-Repudiation: Protection against denial by one of the parties in a communication</li>
-      <li>Availability: Resource accessible/usable</li>
+      <li>tables</li>
+      <li>items</li>
+      <li>attributes</li>
     </ul>
     <br>
     <h1>Benefits of Application Load Balancer</h1>
@@ -212,10 +246,18 @@
     </table>
     <h2>Similarities</h2>
     <p>They both control incoming and outgoing traffic</p>
+    <br>
+    <h2>When an EC2 instance is created in AWS, it is assigned to a region and a Virtual Private Cloud (VPC). Describe how network addresses are allocated to a VPC and sub-networked when an EC2 instance is created. How is the EC2 connected to other machines and to the Internet?</h2>
+    <ul>
+      <li>When you create a VPC, you must specify a range of IPv4 addresses for the VPC in the form of a Classless Inter-Domain Routing (CIDR) block</li>
+      <li>When you create a subnet, you specify the IPv4 CIDR block for the subnet, which is a subset of the VPC CIDR block</li>
+      <li>When you launch an instance, it receives a primary private IP address from the IPv4 address of the subnet, and it is assigned to the primary network interface</li>
+    </ul>
   </section>
   <section>
     <h1>Web Architecture</h1>
     <h2>Benefits of Microservices</h1>
+    <br>
     <ul>
       <li>Agility</li>
       <li>Flexible Scaling</li>
@@ -230,6 +272,20 @@
       <li>Use Cognito</li>
       <li>Use API keys</li>
       <li>Use an external service through Lambda</li>
+    </ul>
+    <br>
+    <h1>Nginx</h1>
+    <ul>
+      <li>Web server that is more closely adapted to running Django apps</li>
+      <li>
+        <p>Used to handle HTTP requests either for</p>
+        <ul>
+          <li>Django app through Gunicorn</li>
+          <li>Directly for static files</li>
+        </ul>
+      </li>
+      <li>Act as a proxy for Django app as Django app only deals with HTTP</li>
+      <li>Serve static files</li>
     </ul>
     <br>
     <h1>Lambda vs EC2</h1>
@@ -247,13 +303,31 @@
     <li>Serverless platforms can be overloaded which opens up a lot of security concerns such as Denial of Service attacks</li>
     </ul>
     <br>
-    <h1>DevOps</h1>
+    <h1>Other Services</h1>
+    <ul>
+      <li>Athena: write SQL queries for S3 data</li>
+      <li>CloudTrail: log all API calls on AWS</li>
+      <li>CloudWatch: monitor resources and applications run on AWS</li>
+      <li>CloudFormation: create, configure and provision AWS resources predictably and repeatedly</li>
+      <li>Elastic Transcoder: convert media files into different formats</li>
+    </ul>
+    <br>
+    <h1>AI Services</h1>
+    <ul>
+      <li>SageMaker: build and ML models</li>
+      <li>Comprehend: use NLP to extract insights from text</li>
+      <li>Lex: conversational interfaces for apps using voice and text</li>
+      <li>Polly: text to speech</li>
+      <li>Rekognition: image and video analysis</li>
+      <li>Transcribe: generate captions from audio</li>
+    </ul>
+    <br>
+    <h1>DevOps Services</h1>
     <ul>
       <li>CodeCommit: manage Git repos in the AWS cloud</li>
       <li>CodeBuild: compile source code, run unit tests and produce artifacts that are ready to deploy</li>
       <li>CodeDeploy: automate application deployments to AWS services</li>
       <li>CodePipeline: model, visualise and automate the steps required to release the software</li>
-      <li>CloudFormation: create, configure and provision AWS resources predictably and repeatedly</li>
       <li>OpsWorks: configure and operate applications in a cloud enterprise</li>
     </ul>
     <br>
